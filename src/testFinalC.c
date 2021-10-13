@@ -26,10 +26,23 @@ FinalC_Object_Define(Person) {
 FinalC_Object_Size(Person);
 FinalC_Object_Create(Person);
 
-void testPersion() {
+// Person 变种规则
+// createPersion With Initialize
+Person *createPersonWithInitialize(char *name, int age) {
     Person *p = createPerson();
     strcpy(p->name, "ffashion");
     p->age = 35;
+    return p;;
+}
+
+
+void testPersion() {
+    // Person *p = createPerson();
+    // strcpy(p->name, "ffashion");
+    // p->age = 35;
+
+    // Person 变种规则 With Suffix -> 
+    Person *p = createPersonWithInitialize("ffashion", 35);
 
     printf("%s 已经 %d 了\n", p->name, p->age);
     // ffashion 已经 35 了
