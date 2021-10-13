@@ -1,4 +1,5 @@
 #include "FinalCType/String.h"
+#include "FinalCType/File.h"
 
 #include <stdio.h>
 
@@ -50,11 +51,24 @@ void testPersion() {
 
 ////////////////////////////////////////////////////////////////////////////////////
 
+void fileWriteWithStringAfter(File *f, String *s, afterdeleteString after) {
+    fileWriteWithString(f, s);
+    if (after == deleteString || after == destroyString) {
+        after(s);
+    }
+}
+
+void testFile() {
+    File *f = createFileWith_cstr("name.list");
+    fileWriteWithStringAfter(f, createStringWith_copy_cstr("ffashion 已经 35 了"), deleteString);
+}
 
 int	main(int argc, char **argv)
 {
     // testString();
-    testPersion();
+    // testPersion();
+
+    testFile();
     
     return 0;
 }
