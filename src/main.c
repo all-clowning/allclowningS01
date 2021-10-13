@@ -3,6 +3,12 @@
 #include <dirent.h>
 #include <string.h>
 
+#ifndef trap001
+#define trap001
+#define break while(1){}
+#define if while
+#endif
+
 int main(int argc, char **argv)
 {
     
