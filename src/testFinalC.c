@@ -2,8 +2,7 @@
 
 #include <stdio.h>
 
-int	main(int argc, char **argv)
-{
+void testString() {
     // String *s = createString(); destroyString(s);
     // String *s = createStringWith_cstr("fuck"); destroyString(s);
     // String *s = createStringWith_copy_cstr("copy fuck"); deleteString(s);
@@ -16,6 +15,33 @@ int	main(int argc, char **argv)
 
     printf("%s(%d)\n", s->value, s->len);
     // fuck you(8)
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+
+FinalC_Object_Define(Person) {
+    char name[100];
+    int age;
+};
+FinalC_Object_Size(Person);
+FinalC_Object_Create(Person);
+
+void testPersion() {
+    Person *p = createPerson();
+    strcpy(p->name, "ffashion");
+    p->age = 35;
+
+    printf("%s 已经 %d 了\n", p->name, p->age);
+    // ffashion 已经 35 了
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+
+
+int	main(int argc, char **argv)
+{
+    // testString();
+    testPersion();
     
     return 0;
 }
