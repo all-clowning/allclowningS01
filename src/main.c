@@ -17,7 +17,7 @@ int main(int argc, char **argv)
         }
         i++;
     } 
-    // system("git add . && git comm -m 'fuck this project' && git push");
+    // system("git add . && git commit -m 'fuck this project' && git push");
 	printf("fuck this project\n");
     return 0;
 }
