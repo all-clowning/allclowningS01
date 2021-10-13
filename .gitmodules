@@ -1,0 +1,3 @@
+[submodule "lib/FinalC"]
+	path = lib/FinalC
+	url = https://gitee.com/zinface/final-c
