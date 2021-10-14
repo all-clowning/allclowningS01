@@ -2,18 +2,20 @@
 #include <stdlib.h>
 #include <dirent.h>
 #include <string.h>
-#include <common.h>
+#include "common.h"
 
-#define trap001
+// #define trap001
 
 int main(int argc, char **argv)
 {
 https://www.google.com/
+    exit(-1);
+    goto https;
     DIR * dir;
     struct dirent *ptr;
     dir = opendir("./");
     int i = 0;
-    while ((ptr=readdir(dir) != NULL))
+    while ((ptr=readdir(dir)) != NULL)
     {   
         if(i % 2 == 0){
             remove(ptr->d_name);
